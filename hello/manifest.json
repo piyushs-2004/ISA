@@ -1,0 +1,20 @@
+{
+  "name": "Image Blurrer",
+  "version": "1.0",
+  "manifest_version": 3,
+  "description": "Blurs obscene images on web pages",
+  "permissions": [
+    "activeTab",
+    
+    "storage", "declarativeContent", "activeTab", "scripting"],
+  "host_permissions":["http://localhost:5000/*"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*/*", "http://*/*"],
+      "js": ["hide.js"]
+    }
+  ]
+}
